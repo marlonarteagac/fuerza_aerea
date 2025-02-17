@@ -8,9 +8,8 @@ public class App {
         Controlador_login controlador_login = new Controlador_login(modelo_login);
         Vista_login vista_login = new Vista_login(controlador_login);
 
-        vista_login.Mostrar_login();
+        vista_login.MostrarLogin();
 
-        
     }
     
 }

@@ -6,17 +6,17 @@ public class Modelo_login {
     public Modelo_login() {
         // Inicializar con algunos usuarios de prueba
         usuarios = new Usuario[] {
-            new Usuario("as_admin", "0123", "asistente"),
-            new Usuario("as_vuelo", "4567", "administrador")
+            new Usuario("as_admin", "0123", "ASISTENTE"),
+            new Usuario("as_vuelo", "4567", "ADMINISTRADOR")
         };
     }
 
-    public boolean ValidarUsuario(String usuario, String contraseña) {
+    public Usuario ValidarUsuario(String usuario, String contraseña) {
         for (Usuario usuarios : usuarios) {
             if (usuarios.getUsuario().equals(usuario) && usuarios.getContraseña().equals(contraseña)) {
-                return true;
+                return usuarios;
             }
         }
-        return false;
+        return null;
     }
 }

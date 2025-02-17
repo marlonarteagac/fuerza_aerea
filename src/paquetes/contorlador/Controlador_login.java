@@ -1,6 +1,7 @@
 package paquetes.contorlador;
 
 import paquetes.modelo.Modelo_login;
+import paquetes.modelo.Usuario;
 
 public class Controlador_login {
     
@@ -10,7 +11,7 @@ public class Controlador_login {
         this.modelo_login = modelo_login;
     }
 
-    public boolean Validar_login(String usuario, String contraseña) {
+    public Usuario ValidarLogin(String usuario, String contraseña) {
         return modelo_login.ValidarUsuario(usuario, contraseña);
     }
 }
