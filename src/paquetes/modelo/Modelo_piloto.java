@@ -2,8 +2,6 @@ package paquetes.modelo;
 
 import java.util.ArrayList;
 
-import javax.management.StringValueExp;
-
 public class Modelo_piloto {
     private ArrayList<Piloto> pilotos;
 
