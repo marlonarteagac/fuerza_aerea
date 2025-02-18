@@ -6,8 +6,8 @@ public class Modelo_login {
     public Modelo_login() {
         // Inicializar con algunos usuarios de prueba
         usuarios = new Usuario[] {
-            new Usuario("as_admin", "0123", "ASISTENTE"),
-            new Usuario("as_vuelo", "4567", "ADMINISTRADOR")
+                new Usuario("as_admin", "0123", "ASISTENTE"),
+                new Usuario("as_vuelo", "4567", "ADMINISTRADOR")
         };
     }
 

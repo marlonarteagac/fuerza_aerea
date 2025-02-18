@@ -12,30 +12,30 @@ public class App {
         Modelo_login modelo_login = new Modelo_login();
         Controlador_login controlador_login = new Controlador_login(modelo_login);
         Vista_login vista_login = new Vista_login(controlador_login);
-int bandera=0;
-        while (bandera==0) {
+        int bandera = 0;
+        while (bandera == 0) {
             // Mostrar pantalla de login
-        vista_login.MostrarLogin();
+            vista_login.MostrarLogin();
 
-        // Capturar credenciales
-        System.out.print("| Usuario:  ");
-        String usuario = entrada.nextLine();
-        System.out.print("| Contraseña: ");
-        String contraseña = entrada.nextLine();
-        System.out.println("+-----------------------------------+");
+            // Capturar credenciales
+            System.out.print("| Usuario:  ");
+            String usuario = entrada.nextLine();
+            System.out.print("| Contraseña: ");
+            String contraseña = entrada.nextLine();
+            System.out.println("+-----------------------------------+");
 
-        // Validar credenciales
-        Usuario permitido = controlador_login.ValidarLogin(usuario, contraseña);
+            // Validar credenciales
+            Usuario permitido = controlador_login.ValidarLogin(usuario, contraseña);
 
-        if (permitido != null) { // Si el usuario existe
-            vista_login.MostrarAcceso(permitido.getUsuario(), permitido.getRol());
-            bandera=1; // Salir del bucle
-        } else { // Si las credenciales son incorrectas
-            vista_login.MostrarError();
-            
+            if (permitido != null) { // Si el usuario existe
+                vista_login.MostrarAcceso(permitido.getUsuario(), permitido.getRol());
+                bandera = 1; // Salir del bucle
+            } else { // Si las credenciales son incorrectas
+                vista_login.MostrarError();
+
+            }
         }
-        }
-        
+
         entrada.close();
 
     }
