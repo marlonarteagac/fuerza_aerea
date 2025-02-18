@@ -1,11 +1,7 @@
 package paquetes.vista;
 
-import paquetes.contorlador.Controlador_login;
-
 public class Vista_login {
-    public Vista_login(Controlador_login controlador_login) {
-
-    }
+  
 
     public void MostrarLogin() {
         System.out.println("+-----------------------------------+");

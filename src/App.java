@@ -11,7 +11,9 @@ public class App {
         // Crear modelo, controlador y vista
         Modelo_login modelo_login = new Modelo_login();
         Controlador_login controlador_login = new Controlador_login(modelo_login);
-        Vista_login vista_login = new Vista_login(controlador_login);
+        Vista_login vista_login = new Vista_login();
+
+        
         int bandera = 0;
         while (bandera == 0) {
             // Mostrar pantalla de login
