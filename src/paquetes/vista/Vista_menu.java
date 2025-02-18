@@ -25,8 +25,8 @@ public void MostrarMenu(List<String> opciones) {
         return entrada.nextInt();
     }
 
-    public void displayMessage(String message) {
-        System.out.println(message);
+    public void MostrarMensaje(String mensaje) {
+        System.out.println(mensaje);
     }
 
 }
