@@ -22,6 +22,7 @@ int bandera=0;
         String usuario = entrada.nextLine();
         System.out.print("| Contraseña: ");
         String contraseña = entrada.nextLine();
+        System.out.println("+-----------------------------------+");
 
         // Validar credenciales
         Usuario permitido = controlador_login.ValidarLogin(usuario, contraseña);
@@ -31,11 +32,11 @@ int bandera=0;
             bandera=1; // Salir del bucle
         } else { // Si las credenciales son incorrectas
             vista_login.MostrarError();
-
+            
         }
         }
         
-
+        entrada.close();
 
     }
 }
