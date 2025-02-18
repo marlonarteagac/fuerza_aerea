@@ -7,35 +7,40 @@ import paquetes.modelo.Usuario;
 
 public class Vista_login {
     private Controlador_login controlador_login;
-
-    public Vista_login(Controlador_login controlador_login) {
-        this.controlador_login = controlador_login;
+        private Scanner entrada;
+        private Vista_login vista_login;
+    
+        public Vista_login(Controlador_login controlador_login) {
+            this.controlador_login = controlador_login;
+            this.entrada = new Scanner(System.in);
     }
 
-    Scanner entrada = new Scanner(System.in);
-
     public void MostrarLogin() {
-        int bandera = 0;
-        while (bandera == 0) {
             System.out.println("+-----------------------------------+");
             System.out.println("|          Iniciar Sesión           |");
             System.out.println("+-----------------------------------+");
-            System.out.println("| [Enter] para ingresar             |\n");
-            System.out.print("| Usuario: ");
-            String usuario = entrada.nextLine();
-            System.out.print("| Contraseña: ");
-            String contraseña = entrada.nextLine();
             System.out.println("+-----------------------------------+");
-            bandera = 1;
+    }
 
-            Usuario permitido = controlador_login.ValidarLogin(usuario, contraseña);
-            if (permitido !=null) {
-                System.out.println("Bienvenido: " + usuario +"tu rol en el sistemas es: "+permitido.getRol());
-            } else {
-                System.out.println("Error: Credenciales incorrectas.");
-                bandera = 0;
-            }
-        }
+    // Muestra un mensaje de éxito
+    public void MostrarAcceso(String usuario, String rol) {
+        System.out.println("+-----------------------------------+");
+        System.out.println("|          Inicio de Sesión         |");
+        System.out.println("+-----------------------------------+");
+        System.out.println("| ¡Bienvenido, " + usuario + "! |");
+        System.out.println("| Rol: " + rol + "                |");
+
+    }
+
+    public void MostrarError() {
+
+        System.out.println("+-----------------------------------+");
+        System.out.println("|          Error de Acceso          |");
+        System.out.println("+-----------------------------------+");
+        System.out.println("| Credenciales incorrectas.         |");
+        System.out.println("| Por favor, inténtelo de nuevo.    |");
+        System.out.println("+-----------------------------------+\n");
+
     }
 
 }
