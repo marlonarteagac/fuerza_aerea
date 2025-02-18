@@ -1,4 +1,4 @@
-package paquetes.contorlador;
+package paquetes.controlador;
 
 import java.util.List;
 
@@ -51,7 +51,7 @@ public class Controlador_menu {
     }
 
     public void IniciarMenu() {
-        List<String> opcion = modelo_menu.getopcion();
+        List<String> opcion = modelo_menu.getopciones();
         vista_menu.MostrarMenu(opcion);
         int opcion_seleccionada = vista_menu.OpcionSeleccionada();
         EjecutarOpcion(opcion_seleccionada);

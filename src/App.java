@@ -1,11 +1,7 @@
 import java.util.Scanner;
-import paquetes.contorlador.Controlador_login;
-import paquetes.contorlador.Controlador_menu;
-import paquetes.modelo.Modelo_login;
-import paquetes.modelo.Modelo_menu;
-import paquetes.modelo.Usuario;
-import paquetes.vista.Vista_login;
-import paquetes.vista.Vista_menu;
+import paquetes.controlador.*;
+import paquetes.modelo.*;
+import paquetes.vista.*;
 
 public class App {
     public static void main(String[] args) {

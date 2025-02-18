@@ -1,4 +1,4 @@
-package paquetes.contorlador;
+package paquetes.controlador;
 
 import paquetes.modelo.Modelo_login;
 import paquetes.modelo.Usuario;
