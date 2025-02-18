@@ -3,6 +3,7 @@ package paquetes.vista;
 public class Vista_login {
   
 
+    //Inicio de sesion en consola
     public void MostrarLogin() {
         System.out.println("+-----------------------------------+");
         System.out.println("|          Iniciar Sesión           |");
@@ -10,7 +11,7 @@ public class Vista_login {
         System.out.println("+[Enter] para ingresar              +");
     }
 
-    // Muestra un mensaje de éxito
+    //Mensaje de exito si se valida correcto el usuario
     public void MostrarAcceso(String usuario, String rol) {
         System.out.println("\n+-----------------------------------+");
         System.out.println("|          Inicio de Sesión         |");
@@ -19,7 +20,7 @@ public class Vista_login {
         System.out.println("| Rol: " + rol + "                ");
         System.out.println("+-----------------------------------");
     }
-
+//mensjae de error si no se validan las credenciales
     public void MostrarError() {
         System.out.println("\n+-----------------------------------+");
         System.out.println("|          Error de Acceso          |");

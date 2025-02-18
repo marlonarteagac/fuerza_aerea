@@ -13,7 +13,7 @@ public class App {
         Controlador_login controlador_login = new Controlador_login(modelo_login);
         Vista_login vista_login = new Vista_login();
 
-        
+
         int bandera = 0;
         while (bandera == 0) {
             // Mostrar pantalla de login
@@ -37,7 +37,7 @@ public class App {
 
             }
         }
-
+        //cierra la entrada de datos
         entrada.close();
 
     }

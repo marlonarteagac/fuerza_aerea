@@ -1,6 +1,7 @@
 package paquetes.modelo;
 
 public class Modelo_login {
+
     private Usuario[] usuarios;
 
     public Modelo_login() {
@@ -12,9 +13,9 @@ public class Modelo_login {
     }
 
     public Usuario ValidarUsuario(String usuario, String contraseña) {
-        for (Usuario usuarios : usuarios) {
-            if (usuarios.getUsuario().equals(usuario) && usuarios.getContraseña().equals(contraseña)) {
-                return usuarios;
+        for (Usuario u : usuarios) {
+            if (u.getUsuario().equals(usuario) && u.getContraseña().equals(contraseña)) {
+                return u;
             }
         }
         return null;
