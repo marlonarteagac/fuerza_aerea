@@ -1,18 +1,10 @@
 package paquetes.vista;
 
-import java.util.Scanner;
-
 import paquetes.contorlador.Controlador_login;
-import paquetes.modelo.Usuario;
 
 public class Vista_login {
-    private Controlador_login controlador_login;
-        private Scanner entrada;
-        private Vista_login vista_login;
-    
-        public Vista_login(Controlador_login controlador_login) {
-            this.controlador_login = controlador_login;
-            this.entrada = new Scanner(System.in);
+    public Vista_login(Controlador_login controlador_login) {
+  
     }
 
     public void MostrarLogin() {
