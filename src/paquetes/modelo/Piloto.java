@@ -2,21 +2,21 @@ package paquetes.modelo;
 
 public class Piloto {
 
-    private String identificacion;
+    private int identificacion;
     private String nombre;
     private String rango;
 
-    public Piloto(String identificacion, String nombre, String rango) {
+    public Piloto(int identificacion, String nombre, String rango) {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.rango = rango;
     }
 
-    public String getIdentificacion() {
+    public int getIdentificacion() {
         return identificacion;
     }
 
-    public void setIdentificacion(String identificacion) {
+    public void setIdentificacion(int identificacion) {
         this.identificacion = identificacion;
     }
 
@@ -35,5 +35,6 @@ public class Piloto {
     public void setRango(String rango) {
         this.rango = rango;
     }
+
 
 }

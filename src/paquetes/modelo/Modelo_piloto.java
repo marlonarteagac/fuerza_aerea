@@ -3,45 +3,65 @@ package paquetes.modelo;
 import java.util.ArrayList;
 
 public class Modelo_piloto {
-    private ArrayList<Piloto> pilotos;
-
-    public Modelo_piloto() {
-        pilotos = new ArrayList<>();
-        // Agregar pilotos a la lista
-    }
-
-   public Piloto BuscarPiloto(String identificacion) {
-        for (Piloto p : pilotos) {
-            if (p.getIdentificacion().equals((identificacion))) {
-                return p;
-            }
-        }
-        return null;
-    }
-    public boolean AgregarPiloto(Piloto piloto) {
-        if (BuscarPiloto(piloto.getIdentificacion()) == null) {
-            pilotos.add(piloto);
-            return true;
-        }
-        return false;
-    }
+    private ArrayList<Piloto> pilotos; //lista de objetos que guarda los pilotos
     
-    public boolean ActualizarPiloto(String identificacion, String nombre, String rango) {
-        Piloto piloto = BuscarPiloto(identificacion);
-        if (piloto != null) {
-            piloto.setNombre(nombre);
-            piloto.setRango(rango);
-            return true;
-        }
-        return false;
+    public Modelo_piloto() {
+        pilotos = new ArrayList<>(); //inicializamos la lista
+        
     }
 
-    public boolean EliminarPiloto(String identificacion) {
-        Piloto piloto = BuscarPiloto(identificacion);
-        if (piloto != null) {
-            pilotos.remove(piloto);
-            return true;
+    // Metotodo para buscar si el piloto ya está en la lista
+private Piloto BuscarPiloto(int identificacion) {
+    for (Piloto p : pilotos) {
+        if (p.getIdentificacion() == identificacion) {
+            return p; // Retorna el piloto si lo encuentra
         }
-        return false;
     }
+    return null; // devuleve null si no encuenta la identificacion
+}
+
+//metodo para modificar un piloto
+public String ModificarPiloto(int identificacion, String nombre, String rango) {
+    Piloto piloto = BuscarPiloto(identificacion);
+    if (piloto != null) {
+        piloto.setIdentificacion(identificacion); // Actualiza la identificacion
+        piloto.setNombre(nombre); // Actualiza el nombre
+        piloto.setRango(rango); // Actualiza el rango
+        return "Piloto modificado exitosamente.";
+    }
+    return "Piloto no encontrado."; // Si el piloto no existe
+}
+
+// Agrega un piloto a la lista
+public String RegistrarPiloto(Piloto piloto) {
+    if (BuscarPiloto(piloto.getIdentificacion()) != null) {
+        return "El piloto ya existe."; // si es diferente de null es que ya esa identificacion existe
+    }
+    pilotos.add(piloto); // se agrega el piloto a la lista
+    return "Piloto registrado exitosamente.";
+}
+
+// Modifica un piloto existente
+
+
+// Consulta un piloto por su ID
+//public String consultarPiloto(int id) {
+  //  Pilotos piloto = buscarPilotoPorId(id);
+    //if (piloto != null) {
+      //  return "ID: " + piloto.getId() + ", Nombre: " + piloto.getNombre() + ", Rango: " + piloto.getRango();
+    //}
+   // return "Piloto no encontrado."; // Si el piloto no existe
+//}
+
+// Elimina un piloto de la lista
+public String EliminarPiloto(int identificacion) {
+    Piloto piloto = BuscarPiloto(identificacion);
+    if (piloto != null) {
+        pilotos.remove(piloto); // Elimina el piloto encontrado
+        return "Piloto eliminado exitosamente.";
+    }
+    return "Piloto no encontrado."; // Si el piloto no existe
+}
+
+
 }

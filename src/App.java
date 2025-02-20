@@ -35,6 +35,15 @@ public class App {
                 Vista_menu vista_menu = new Vista_menu();
                 Controlador_menu controlador_menu = new Controlador_menu(modelo_menu, vista_menu);
                 controlador_menu.IniciarMenu();
+
+                Modelo_piloto modelo_piloto = new Modelo_piloto();
+                // Crear el Controlador y pasarle el Modelo
+                Controlador_piloto controlador_piloto = new Controlador_piloto(modelo_piloto);
+                // Crear la Vista y pasarle el Controlador
+                Vista_piloto vista_piloto = new Vista_piloto(controlador_piloto);
+                // Iniciar la aplicación
+                vista_piloto.GestionarPilotoMenu();
+
             } else { // Si las credenciales son incorrectas
                 vista_login.MostrarError();
 
