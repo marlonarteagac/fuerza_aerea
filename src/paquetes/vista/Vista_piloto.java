@@ -23,7 +23,7 @@ public void GestionarPilotoMenu() {
         while (true) {
             // Menú principal
             System.out.println("+-----------------------------------+");
-            System.out.println("|          Menú de Pilotos          |");
+            System.out.println("|          Gestionar de Piloto      |");
             System.out.println("+-----------------------------------+");
             System.out.println("| 1. Registrar Piloto               |");
             System.out.println("| 2. Modificar Piloto               |");

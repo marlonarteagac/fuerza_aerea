@@ -20,6 +20,15 @@ private Piloto BuscarPiloto(int identificacion) {
     return null; // devuleve null si no encuenta la identificacion
 }
 
+// Agrega un piloto a la lista
+public String RegistrarPiloto(Piloto piloto) {
+    if (BuscarPiloto(piloto.getIdentificacion()) != null) {
+        return "El piloto ya existe."; // si es diferente de null es que ya esa identificacion existe
+    }
+    pilotos.add(piloto); // se agrega el piloto a la lista
+    return "Piloto registrado exitosamente.";
+}
+
 //metodo para modificar un piloto
 public String ModificarPiloto(int identificacion, String nombre, String rango) {
     Piloto piloto = BuscarPiloto(identificacion);
@@ -32,14 +41,19 @@ public String ModificarPiloto(int identificacion, String nombre, String rango) {
     return "Piloto no encontrado."; // Si el piloto no existe
 }
 
-// Agrega un piloto a la lista
-public String RegistrarPiloto(Piloto piloto) {
-    if (BuscarPiloto(piloto.getIdentificacion()) != null) {
-        return "El piloto ya existe."; // si es diferente de null es que ya esa identificacion existe
+
+
+// Elimina un piloto de la lista
+public String EliminarPiloto(int identificacion) {
+    Piloto piloto = BuscarPiloto(identificacion);
+    if (piloto != null) {
+        pilotos.remove(piloto); // Elimina el piloto encontrado
+        return "Piloto eliminado exitosamente.";
     }
-    pilotos.add(piloto); // se agrega el piloto a la lista
-    return "Piloto registrado exitosamente.";
+    return "Piloto no encontrado."; // Si el piloto no existe
 }
+
+
 
 // Modifica un piloto existente
 
@@ -52,16 +66,5 @@ public String RegistrarPiloto(Piloto piloto) {
     //}
    // return "Piloto no encontrado."; // Si el piloto no existe
 //}
-
-// Elimina un piloto de la lista
-public String EliminarPiloto(int identificacion) {
-    Piloto piloto = BuscarPiloto(identificacion);
-    if (piloto != null) {
-        pilotos.remove(piloto); // Elimina el piloto encontrado
-        return "Piloto eliminado exitosamente.";
-    }
-    return "Piloto no encontrado."; // Si el piloto no existe
-}
-
 
 }

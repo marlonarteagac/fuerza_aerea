@@ -1,58 +1,16 @@
-import java.util.Scanner;
 import paquetes.controlador.*;
 import paquetes.modelo.*;
 import paquetes.vista.*;
 
 public class App {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
 
         // Crear modelo, controlador y vista
         Modelo_login modelo_login = new Modelo_login();
-        Controlador_login controlador_login = new Controlador_login(modelo_login);
         Vista_login vista_login = new Vista_login();
+        Controlador_login controlador_login = new Controlador_login(modelo_login, vista_login);
 
-        int bandera = 0;
-        while (bandera == 0) {
-            // Mostrar pantalla de login
-            vista_login.MostrarLogin();
+        controlador_login.MostrarLogin();      
 
-            // Capturar credenciales
-            System.out.print("| Usuario:  ");
-            String usuario = entrada.nextLine();
-            System.out.print("| Contraseña: ");
-            String contraseña = entrada.nextLine();
-            System.out.println("+-----------------------------------+");
-
-            // Validar credenciales
-            Usuario permitido = controlador_login.ValidarLogin(usuario, contraseña);
-
-            if (permitido != null) { // Si el usuario existe
-                vista_login.MostrarAcceso(permitido.getUsuario(), permitido.getRol());
-                bandera = 1; // Salir del bucle
-
-                Modelo_menu modelo_menu = new Modelo_menu(permitido.getRol());
-                Vista_menu vista_menu = new Vista_menu();
-                Controlador_menu controlador_menu = new Controlador_menu(modelo_menu, vista_menu);
-                controlador_menu.IniciarMenu();
-
-                Modelo_piloto modelo_piloto = new Modelo_piloto();
-                // Crear el Controlador y pasarle el Modelo
-                Controlador_piloto controlador_piloto = new Controlador_piloto(modelo_piloto);
-                // Crear la Vista y pasarle el Controlador
-                Vista_piloto vista_piloto = new Vista_piloto(controlador_piloto);
-                // Iniciar la aplicación
-                vista_piloto.GestionarPilotoMenu();
-
-            } else { // Si las credenciales son incorrectas
-                vista_login.MostrarError();
-
-            }
-
-        }
-        // cierra la entrada de datos
-        entrada.close();
-
-    }
-
+}
 }
