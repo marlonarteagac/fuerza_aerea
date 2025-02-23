@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 import paquetes.modelo.Modelo_login;
 import paquetes.modelo.Modelo_menu;
-import paquetes.modelo.Modelo_piloto;
+import paquetes.modelo.Modelo_gestionar_piloto;
 import paquetes.modelo.Usuario;
 import paquetes.vista.Vista_login;
 import paquetes.vista.Vista_menu;
-import paquetes.vista.Vista_piloto;
+import paquetes.vista.Vista_gestionar_piloto;
 
 public class Controlador_login {
 
@@ -58,9 +58,9 @@ public class Controlador_login {
         Controlador_menu controlador_menu = new Controlador_menu(modelo_menu, vista_menu);
         controlador_menu.IniciarMenu();
 
-        Modelo_piloto modelo_piloto = new Modelo_piloto();
-        Controlador_piloto controlador_piloto = new Controlador_piloto(modelo_piloto);
-        Vista_piloto vista_piloto = new Vista_piloto(controlador_piloto);
+        Modelo_gestionar_piloto modelo_piloto = new Modelo_gestionar_piloto();
+        Controlador_gestionar_piloto controlador_piloto = new Controlador_gestionar_piloto(modelo_piloto);
+        Vista_gestionar_piloto vista_piloto = new Vista_gestionar_piloto(controlador_piloto);
         vista_piloto.GestionarPilotoMenu();
     }
     

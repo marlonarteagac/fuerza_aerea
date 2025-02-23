@@ -2,16 +2,16 @@ package paquetes.vista;
 
 import java.util.Scanner;
 
-import paquetes.controlador.Controlador_piloto;
+import paquetes.controlador.Controlador_gestionar_piloto;
 
-public class Vista_piloto {
+public class Vista_gestionar_piloto {
 
-    private Controlador_piloto controlador_piloto; // conectamos con el modelo_piloto y todo lo que tenga
+    private Controlador_gestionar_piloto controlador_piloto; // conectamos con el modelo_piloto y todo lo que tenga
     private Scanner entrada; // Para leer la entrada del usuario
 
 
     //inicamos el constructor
-    public Vista_piloto(Controlador_piloto controlador_piloto) {
+    public Vista_gestionar_piloto(Controlador_gestionar_piloto controlador_piloto) {
         this.controlador_piloto = controlador_piloto;
         this.entrada = new Scanner(System.in);
     }

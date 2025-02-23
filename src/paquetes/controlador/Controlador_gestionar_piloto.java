@@ -1,13 +1,13 @@
 package paquetes.controlador;
 
-import paquetes.modelo.Modelo_piloto;
+import paquetes.modelo.Modelo_gestionar_piloto;
 import paquetes.modelo.Piloto;
 
-public class Controlador_piloto {
+public class Controlador_gestionar_piloto {
    
-    private Modelo_piloto modelo_piloto;
+    private Modelo_gestionar_piloto modelo_piloto;
 
-    public Controlador_piloto(Modelo_piloto modelo_piloto){
+    public Controlador_gestionar_piloto(Modelo_gestionar_piloto modelo_piloto){
         this.modelo_piloto = modelo_piloto;
     }
 

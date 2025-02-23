@@ -2,10 +2,10 @@ package paquetes.modelo;
 
 import java.util.ArrayList;
 
-public class Modelo_piloto {
+public class Modelo_gestionar_piloto {
     private ArrayList<Piloto> pilotos; //lista de objetos que guarda los pilotos
     
-    public Modelo_piloto() {
+    public Modelo_gestionar_piloto() {
         pilotos = new ArrayList<>(); //inicializamos la lista
         
     }
