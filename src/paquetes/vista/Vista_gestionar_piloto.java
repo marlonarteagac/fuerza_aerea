@@ -3,17 +3,19 @@ package paquetes.vista;
 import java.util.Scanner;
 
 import paquetes.controlador.Controlador_gestionar_piloto;
+import paquetes.controlador.Controlador_menu;
 
 public class Vista_gestionar_piloto {
 
     private Controlador_gestionar_piloto controlador_piloto; // conectamos con el modelo_piloto y todo lo que tenga
     private Scanner entrada; // Para leer la entrada del usuario
-
+    private Controlador_menu controlador_menu;
 
     //inicamos el constructor
-    public Vista_gestionar_piloto(Controlador_gestionar_piloto controlador_piloto) {
+    public Vista_gestionar_piloto(Controlador_gestionar_piloto controlador_piloto, Controlador_menu controlador_menu) {
         this.controlador_piloto = controlador_piloto;
         this.entrada = new Scanner(System.in);
+        this.controlador_menu = controlador_menu;
     }
 
 
@@ -46,9 +48,10 @@ public void GestionarPilotoMenu() {
                     EliminarPiloto(); // Eliminar un piloto
                     break;
                 case 4:
+                VolverMenuPrincipal();
                     System.out.println("Saliendo del sistema...");
-                    
-                    return; // Salir del programa
+                    return;
+    
                 default:
                     System.out.println("Opción no válida.");
             }
@@ -92,5 +95,8 @@ public void GestionarPilotoMenu() {
         // Llama al Controlador para eliminar el piloto
         String resultado = controlador_piloto.EliminarPiloto(identificacion);
         System.out.println(resultado); // Muestra el resultado
+    }
+    private void VolverMenuPrincipal(){
+        controlador_menu.IniciarMenuPrincipal();
     }
 }
