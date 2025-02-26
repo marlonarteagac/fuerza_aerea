@@ -10,10 +10,18 @@ import paquetes.vista.Vista_menu;
 public class Controlador_menu {
     private Modelo_menu modelo_menu;
     private Vista_menu vista_menu;
+    private Modelo_gestionar_piloto modelo_gestionar_piloto;  // Mantener una única instancia
+    private Controlador_gestionar_piloto controlador_gestionar_piloto;
+
+    
     public Controlador_menu(Modelo_menu modelo_menu, Vista_menu vista_menu) {
         this.modelo_menu = modelo_menu;
         this.vista_menu = vista_menu;
+        this.modelo_gestionar_piloto = new Modelo_gestionar_piloto();
+        this.controlador_gestionar_piloto = new Controlador_gestionar_piloto(modelo_gestionar_piloto);
+        
     }
+
 
     private void EjecutarOpcion(int option) {
         switch (option) {
@@ -57,10 +65,10 @@ public class Controlador_menu {
         EjecutarOpcion(opcion_seleccionada);
     }
 
-    private void MostrarGestionPiloto(){
-        Modelo_gestionar_piloto modelo_piloto = new Modelo_gestionar_piloto();
-        Controlador_gestionar_piloto controlador_piloto = new Controlador_gestionar_piloto(modelo_piloto);
-        Vista_gestionar_piloto vista_piloto = new Vista_gestionar_piloto(controlador_piloto, this);
+    private void MostrarGestionPiloto() {
+        Vista_gestionar_piloto vista_piloto = new Vista_gestionar_piloto(controlador_gestionar_piloto, this);
         vista_piloto.GestionarPilotoMenu();
     }
+
+
 }

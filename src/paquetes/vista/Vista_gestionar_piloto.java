@@ -7,13 +7,13 @@ import paquetes.controlador.Controlador_menu;
 
 public class Vista_gestionar_piloto {
 
-    private Controlador_gestionar_piloto controlador_piloto; // conectamos con el modelo_piloto y todo lo que tenga
+    private Controlador_gestionar_piloto controlador_gestionar_piloto; // conectamos con el modelo_piloto y todo lo que tenga
     private Scanner entrada; // Para leer la entrada del usuario
     private Controlador_menu controlador_menu;
 
     //inicamos el constructor
-    public Vista_gestionar_piloto(Controlador_gestionar_piloto controlador_piloto, Controlador_menu controlador_menu) {
-        this.controlador_piloto = controlador_piloto;
+    public Vista_gestionar_piloto(Controlador_gestionar_piloto controlador_gestionar_piloto, Controlador_menu controlador_menu) {
+        this.controlador_gestionar_piloto = controlador_gestionar_piloto;
         this.entrada = new Scanner(System.in);
         this.controlador_menu = controlador_menu;
     }
@@ -27,10 +27,11 @@ public void GestionarPilotoMenu() {
             System.out.println("+-----------------------------------+");
             System.out.println("|          Gestionar de Piloto      |");
             System.out.println("+-----------------------------------+");
-            System.out.println("| 1. Registrar Piloto               |");
-            System.out.println("| 2. Modificar Piloto               |");
-            System.out.println("| 3. Eliminar Piloto                |");
-            System.out.println("| 4. Menú principal                 |");
+            System.out.println("| 1. Registrar Pilotos               |");
+            System.out.println("| 2. Modificar Pilotos               |");
+            System.out.println("| 3. Eliminar Pilotos                |");
+            System.out.println("| 4. Consultar pilotos               |");
+            System.out.println("| 5. Menú principal                 |");
             System.out.println("+-----------------------------------+");
             System.out.print("| Seleccione una opción: ");
             int opcion = entrada.nextInt();
@@ -48,9 +49,12 @@ public void GestionarPilotoMenu() {
                     EliminarPiloto(); // Eliminar un piloto
                     break;
                 case 4:
+                    ConsultarPilotos(); // Consultar pilotos 
+ 
+                    break;
+                case 5:
                 VolverMenuPrincipal();
-                    System.out.println("Saliendo del sistema...");
-                    return;
+                    break;
     
                 default:
                     System.out.println("Opción no válida.");
@@ -68,7 +72,7 @@ public void GestionarPilotoMenu() {
         String rango = entrada.nextLine();
 
         // Llama al Controlador para registrar el piloto
-        String resultado = controlador_piloto.RegistrarPiloto(identificacion, nombre, rango);
+        String resultado = controlador_gestionar_piloto.RegistrarPiloto(identificacion, nombre, rango);
         System.out.println(resultado); // Muestra el resultado
     }
 
@@ -82,7 +86,7 @@ public void GestionarPilotoMenu() {
         String rango = entrada.nextLine();
 
         // Llama al Controlador para modificar el piloto
-        String resultado = controlador_piloto.ModificarPiloto(identificacion, nombre, rango);
+        String resultado = controlador_gestionar_piloto.ModificarPiloto(identificacion, nombre, rango);
         System.out.println(resultado); // Muestra el resultado
     }
 
@@ -93,10 +97,13 @@ public void GestionarPilotoMenu() {
         entrada.nextLine(); // Limpiar el buffer
 
         // Llama al Controlador para eliminar el piloto
-        String resultado = controlador_piloto.EliminarPiloto(identificacion);
+        String resultado = controlador_gestionar_piloto.EliminarPiloto(identificacion);
         System.out.println(resultado); // Muestra el resultado
     }
     private void VolverMenuPrincipal(){
         controlador_menu.IniciarMenuPrincipal();
     }
+  private void ConsultarPilotos(){
+    System.out.println(controlador_gestionar_piloto.ConsultarPilotos());
+  }
 }

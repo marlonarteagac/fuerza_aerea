@@ -53,18 +53,21 @@ public String EliminarPiloto(int identificacion) {
     return "Piloto no encontrado."; // Si el piloto no existe
 }
 
+//consultar pilotos existentes en la lista
+public String ConsultarPilotos() {
+    if (pilotos.isEmpty()) {
+
+        return "No hay pilotos registrados.";
+    }
+    StringBuilder resultado = new StringBuilder("Lista de pilotos:\n");
+    for (Piloto p : pilotos) {
+        resultado.append("ID: ").append(p.getIdentificacion())
+                 .append(", Nombre: ").append(p.getNombre())
+                 .append(", Rango: ").append(p.getRango())
+                 .append("\n");
+    }
+    return resultado.toString();
 
 
-// Modifica un piloto existente
-
-
-// Consulta un piloto por su ID
-//public String consultarPiloto(int id) {
-  //  Pilotos piloto = buscarPilotoPorId(id);
-    //if (piloto != null) {
-      //  return "ID: " + piloto.getId() + ", Nombre: " + piloto.getNombre() + ", Rango: " + piloto.getRango();
-    //}
-   // return "Piloto no encontrado."; // Si el piloto no existe
-//}
-
+}
 }
