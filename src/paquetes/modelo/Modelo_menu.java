@@ -8,7 +8,7 @@ public class Modelo_menu {
     private List<String> opciones;
 
 
-    private void Leeropcioneses() {
+    private void LeerOpciones() {
         if (rol.equals("ADMINISTRADOR")) {
             opciones.add("Gestionar Piloto");
             opciones.add("Gestionar Aeronaves");
@@ -28,14 +28,14 @@ public class Modelo_menu {
     public Modelo_menu(String rol) {
         this.rol = rol;
         this.opciones = new ArrayList<>();
-        Leeropcioneses();
+        LeerOpciones();
     }
     
     public String getRol() {
         return rol;
     }
 
-    public List<String> getopciones() {
+    public List<String> getOpciones() {
         return opciones;
     }
 

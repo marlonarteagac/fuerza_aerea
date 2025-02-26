@@ -40,6 +40,7 @@ public void GestionarPilotoMenu() {
             switch (opcion) {
                 case 1:
                   RegistrarPiloto(); // Registrar un piloto
+                  ConsultarPiloto(); // Consultar pilotos 
                     break;
                 case 2:
                     ModificarPiloto(); // Modificar un piloto
@@ -49,12 +50,12 @@ public void GestionarPilotoMenu() {
                     EliminarPiloto(); // Eliminar un piloto
                     break;
                 case 4:
-                    ConsultarPilotos(); // Consultar pilotos 
+                    ConsultarPiloto(); // Consultar pilotos 
  
                     break;
                 case 5:
                 VolverMenuPrincipal();
-                    break;
+                    return;
     
                 default:
                     System.out.println("Opción no válida.");
@@ -103,7 +104,7 @@ public void GestionarPilotoMenu() {
     private void VolverMenuPrincipal(){
         controlador_menu.IniciarMenuPrincipal();
     }
-  private void ConsultarPilotos(){
-    System.out.println(controlador_gestionar_piloto.ConsultarPilotos());
+  private void ConsultarPiloto(){
+    System.out.println(controlador_gestionar_piloto.ConsultarPiloto());
   }
 }

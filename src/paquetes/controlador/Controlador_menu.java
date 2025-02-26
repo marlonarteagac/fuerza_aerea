@@ -23,8 +23,8 @@ public class Controlador_menu {
     }
 
 
-    private void EjecutarOpcion(int option) {
-        switch (option) {
+    private void EjecutarOpcion(int opcion) {
+        switch (opcion)  {
             case 1:
                 vista_menu.MostrarMensaje("Gestionar Piloto seleccionado.");
                 MostrarGestionPiloto();
@@ -59,15 +59,15 @@ public class Controlador_menu {
     }
 
     public void IniciarMenuPrincipal() {
-        List<String> opcion = modelo_menu.getopciones();
+        List<String> opcion = modelo_menu.getOpciones();
         vista_menu.MostrarMenu(opcion);
         int opcion_seleccionada = vista_menu.OpcionSeleccionada();
         EjecutarOpcion(opcion_seleccionada);
     }
 
     private void MostrarGestionPiloto() {
-        Vista_gestionar_piloto vista_piloto = new Vista_gestionar_piloto(controlador_gestionar_piloto, this);
-        vista_piloto.GestionarPilotoMenu();
+        Vista_gestionar_piloto vista_gestionar_piloto = new Vista_gestionar_piloto(controlador_gestionar_piloto, this);
+        vista_gestionar_piloto.GestionarPilotoMenu();
     }
 
 

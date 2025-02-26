@@ -28,7 +28,7 @@ public class Controlador_gestionar_piloto {
         return modelo_gestionar_piloto.EliminarPiloto(identificacion); // Llama al Modelo para eliminarlo
     }
 
-    public String ConsultarPilotos() {
-        return modelo_gestionar_piloto.ConsultarPilotos(); // Llama al método en el Modelo
+    public String ConsultarPiloto() {
+        return modelo_gestionar_piloto.ConsultarPiloto(); // Llama al método en el Modelo
     }
 }
