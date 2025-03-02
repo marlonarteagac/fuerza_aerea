@@ -39,29 +39,33 @@ public class Vista_gestionar_piloto {
 
             switch (opcion) {
                 case 1:
+                Tareas.LimpiarConsola();
                     RegistrarPiloto(); // Registrar un piloto
-
+           
                     break;
                 case 2:
+                Tareas.LimpiarConsola();
                     ConsultarPiloto(); // Consultar pilotos
                     ModificarPiloto(); // Modificar un piloto
+
 
                     break;
 
                 case 3:
+                Tareas.LimpiarConsola();
                     ConsultarPiloto(); // Consultar pilotos
                     EliminarPiloto(); // Eliminar un piloto
 
                     break;
                 case 4:
+                Tareas.LimpiarConsola();
                     ConsultarPiloto(); // Consultar pilotos
 
                     break;
                 case 5:
-                    Tareas.LimpiarConsola();
+                Tareas.LimpiarConsola();
                     VolverMenuPrincipal();
                     return;
-
                 default:
                     System.out.println("Opción no válida.");
             }
@@ -80,7 +84,8 @@ public class Vista_gestionar_piloto {
         System.out.print("Rango: ");
         String rango = entrada.nextLine();
 
-        // Llama al Controlador para registrar el piloto
+       // Llama al Controlador para registrar el piloto
+        Tareas.LimpiarConsola();
         String resultado = controlador_gestionar_piloto.RegistrarPiloto(identificacion, nombre, rango);
         System.out.println(resultado); // Muestra el resultado
     }
@@ -96,10 +101,11 @@ public class Vista_gestionar_piloto {
         String nombre = entrada.nextLine();
         System.out.print("Rango: ");
         String rango = entrada.nextLine();
-
         // Llama al Controlador para modificar el piloto
+        Tareas.LimpiarConsola();
         String resultado = controlador_gestionar_piloto.ModificarPiloto(identificacion, nombre, rango);
         System.out.println(resultado); // Muestra el resultado
+       
     }
 
     private void EliminarPiloto() {
@@ -128,6 +134,7 @@ public class Vista_gestionar_piloto {
 
     private void VolverMenuPrincipal() {
         controlador_menu.IniciarMenuPrincipal();
+
     }
 
     private void ConsultarPiloto() {
@@ -135,5 +142,6 @@ public class Vista_gestionar_piloto {
         System.out.println("|          Consultar piloto          |");
         System.out.println("+-----------------------------------+");
         System.out.println(controlador_gestionar_piloto.ConsultarPiloto());
+
     }
 }

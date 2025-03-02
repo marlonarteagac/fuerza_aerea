@@ -39,15 +39,17 @@ public class Controlador_login {
             Usuario permitido = modelo_login.ValidarUsuario(usuario, contraseña);
 
             if (permitido != null) { // Si el usuario es válido
+                Tareas.LimpiarConsola();
                 vista_login.MostrarAcceso(permitido.getUsuario(), permitido.getRol());
                 bandera = 1; // Salir del bucle
-
+               
                 // Iniciar menú después del login exitoso
                 iniciarMenu(permitido);
-
+   
             } else { // Si las credenciales son incorrectas
                 Tareas.LimpiarConsola();
                 vista_login.MostrarError();
+                
             }
         }
     }
