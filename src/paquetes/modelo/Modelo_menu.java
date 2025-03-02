@@ -11,15 +11,15 @@ public class Modelo_menu {
     private void LeerOpciones() {
         if (rol.equals("ADMINISTRADOR")) {
             opciones.add("Gestionar Piloto");
-            opciones.add("Gestionar Aeronaves");
             opciones.add("Gestionar Fuerza Pública");
+            opciones.add("Gestionar Aeronaves");
             opciones.add("Gestionar Vuelos");
             opciones.add("Consultar Información");
             opciones.add("Cerrar Sesión");
         } else {
             opciones.add("Gestionar Piloto");
-            opciones.add("Gestionar Aeronaves");
             opciones.add("Gestionar Fuerza Pública");
+            opciones.add("Gestionar Aeronaves");
             opciones.add("Consultar Información");
             opciones.add("Cerrar Sesión");
         }

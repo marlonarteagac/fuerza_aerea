@@ -2,7 +2,6 @@ package paquetes.Controlador;
 
 import paquetes.Modelo.Modelo_gestionar_piloto;
 import paquetes.Modelo.Piloto;
-import paquetes.Principal.Tareas;
 
 public class Controlador_gestionar_piloto {
 
