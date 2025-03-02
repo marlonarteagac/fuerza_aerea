@@ -1,11 +1,11 @@
-package paquetes.controlador;
-
+package paquetes.Controlador;
 import java.util.List;
+import paquetes.Modelo.Modelo_gestionar_piloto;
+import paquetes.Modelo.Modelo_menu;
+import paquetes.Vista.Vista_gestionar_piloto;
+import paquetes.Vista.Vista_menu;
+import paquetes.Principal.Tareas;
 
-import paquetes.modelo.Modelo_gestionar_piloto;
-import paquetes.modelo.Modelo_menu;
-import paquetes.vista.Vista_gestionar_piloto;
-import paquetes.vista.Vista_menu;
 
 public class Controlador_menu {
     private Modelo_menu modelo_menu;
@@ -25,9 +25,13 @@ public class Controlador_menu {
 
     private void EjecutarOpcion(int opcion) {
         switch (opcion)  {
+
             case 1:
                 vista_menu.MostrarMensaje("Gestionar Piloto seleccionado.");
+                Tareas.LimpiarConsola();
                 MostrarGestionPiloto();
+                
+             
                 break;
             case 2:
                 vista_menu.MostrarMensaje("Gestionar Aeronaves seleccionado.");
@@ -59,16 +63,19 @@ public class Controlador_menu {
     }
 
     public void IniciarMenuPrincipal() {
+
         List<String> opcion = modelo_menu.getOpciones();
         vista_menu.MostrarMenu(opcion);
         int opcion_seleccionada = vista_menu.OpcionSeleccionada();
         EjecutarOpcion(opcion_seleccionada);
+
     }
 
     private void MostrarGestionPiloto() {
         Vista_gestionar_piloto vista_gestionar_piloto = new Vista_gestionar_piloto(controlador_gestionar_piloto, this);
         vista_gestionar_piloto.GestionarPilotoMenu();
-    }
 
+    }
+    
 
 }

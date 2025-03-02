@@ -1,13 +1,12 @@
-package paquetes.controlador;
+package paquetes.Controlador;
 
 import java.util.Scanner;
-
-import paquetes.modelo.Modelo_login;
-import paquetes.modelo.Modelo_menu;
-import paquetes.modelo.Usuario;
-import paquetes.vista.Vista_login;
-import paquetes.vista.Vista_menu;
-
+import paquetes.Modelo.Modelo_login;
+import paquetes.Modelo.Modelo_menu;
+import paquetes.Modelo.Usuario;
+import paquetes.Vista.Vista_login;
+import paquetes.Vista.Vista_menu;
+import paquetes.Principal.Tareas;
 public class Controlador_login {
 
     private Modelo_login modelo_login;
@@ -22,12 +21,12 @@ public class Controlador_login {
     }
 
     public void MostrarLogin() {
+        
        int bandera = 0;
 
         while (bandera==0) {
             // Mostrar pantalla de login
             vista_login.MostrarLogin();
-
             // Capturar credenciales del usuario
             System.out.print("| Usuario:  ");
             String usuario = entrada.nextLine();
@@ -45,17 +44,20 @@ public class Controlador_login {
                 // Iniciar menú después del login exitoso
                 iniciarMenu(permitido);
             } else { // Si las credenciales son incorrectas
+                Tareas.LimpiarConsola();
                 vista_login.MostrarError();
+
+   
             }
         }
     }
 
     private void iniciarMenu(Usuario usuario) {
+        
         Modelo_menu modelo_menu = new Modelo_menu(usuario.getRol());
         Vista_menu vista_menu = new Vista_menu();
         Controlador_menu controlador_menu = new Controlador_menu(modelo_menu, vista_menu);
         controlador_menu.IniciarMenuPrincipal();
-     
     }
     
 

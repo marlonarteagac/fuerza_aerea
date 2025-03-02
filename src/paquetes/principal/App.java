@@ -1,7 +1,7 @@
-package paquetes.principal;
-import paquetes.controlador.*;
-import paquetes.modelo.*;
-import paquetes.vista.*;
+package paquetes.Principal;
+import paquetes.Controlador.*;
+import paquetes.Modelo.*;
+import paquetes.Vista.*;
 
 public class App {
     public static void main(String[] args) {

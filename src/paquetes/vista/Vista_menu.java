@@ -1,4 +1,4 @@
-package paquetes.vista;
+package paquetes.Vista;
 
 import java.util.List;
 import java.util.Scanner;
