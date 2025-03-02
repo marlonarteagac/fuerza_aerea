@@ -40,14 +40,18 @@ public class Vista_gestionar_piloto {
             switch (opcion) {
                 case 1:
                     RegistrarPiloto(); // Registrar un piloto
-                    ConsultarPiloto(); // Consultar pilotos
+
                     break;
                 case 2:
+                    ConsultarPiloto(); // Consultar pilotos
                     ModificarPiloto(); // Modificar un piloto
+
                     break;
 
                 case 3:
+                    ConsultarPiloto(); // Consultar pilotos
                     EliminarPiloto(); // Eliminar un piloto
+
                     break;
                 case 4:
                     ConsultarPiloto(); // Consultar pilotos
@@ -110,6 +114,7 @@ public class Vista_gestionar_piloto {
         System.out.println("|       No = 0        Si = 1        |");
         System.out.println("+-----------------------------------+");
         int validar = entrada.nextInt();
+        Tareas.LimpiarConsola();
         if (validar == 1) {
             // Llama al Controlador para eliminar el piloto
             String resultado = controlador_gestionar_piloto.EliminarPiloto(identificacion);
@@ -126,6 +131,9 @@ public class Vista_gestionar_piloto {
     }
 
     private void ConsultarPiloto() {
+        System.out.println("+-----------------------------------+");
+        System.out.println("|          Consultar piloto          |");
+        System.out.println("+-----------------------------------+");
         System.out.println(controlador_gestionar_piloto.ConsultarPiloto());
     }
 }
