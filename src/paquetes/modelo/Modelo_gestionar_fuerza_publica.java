@@ -23,10 +23,10 @@ public class Modelo_gestionar_fuerza_publica {
     // Agrega un piloto a la lista
     public String RegistrarfuerzaPublica(Fuerza_publica fuerza_publica) {
         if (BuscarFuerzaPublica(fuerza_publica.getCodigo()) != null) {
-            return "fuerza publica ya existe."; // si es diferente de null es que ya esa identificacion existe
+            return "fuerza pública ya existe."; // si es diferente de null es que ya esa identificacion existe
         }
         fuerzas_publicas.add(fuerza_publica); // se agrega el piloto a la lista
-        return "fuerza publica registrada exitosamente.";
+        return "fuerza pública registrada exitosamente.";
     }
 
     // metodo para modificar un piloto
@@ -35,9 +35,9 @@ public class Modelo_gestionar_fuerza_publica {
         if (fuerza_publica != null) {
             fuerza_publica.setCodigo(codigo);// Actualiza la identificacion
             fuerza_publica.setNombre(nombre); // Actualiza el nombre
-            return "Fuerza publica modificada exitosamente.";
+            return "Fuerza pública modificada exitosamente.";
         }
-        return "Fuerza publica no encontrado."; // Si el piloto no existe
+        return "Fuerza pública no encontrado."; // Si el piloto no existe
     }
 
     // Elimina un piloto de la lista
@@ -47,7 +47,7 @@ public class Modelo_gestionar_fuerza_publica {
             fuerzas_publicas.remove(fuerza_publica); // Elimina el piloto encontrado
             return "fuerza publica eliminada exitosamente.";
         }
-        return "Fuerza publcia no encontrada."; // Si el piloto no existe
+        return "Fuerza pública no encontrada."; // Si el piloto no existe
     }
 
     // consultar pilotos existentes en la lista
@@ -56,11 +56,12 @@ public class Modelo_gestionar_fuerza_publica {
 
             return "No hay fuerzas publicas registradas.";
         }
-        StringBuilder resultado = new StringBuilder("Lista de pilotos:\n");
+        StringBuilder resultado = new StringBuilder("Lista de fuerzas públicas:\n");
         for (Fuerza_publica fp : fuerzas_publicas) {
-            resultado.append("Codigo: ").append(fp.getCodigo())
-                    .append(", Nombre: ").append(fp.getNombre())
-                    .append("\n");
+            resultado.append("Codigo: ").append(fp.getCodigo());
+            resultado.append(", Nombre: ").append(fp.getNombre());
+            resultado.append("\n");
+     
         }
         return resultado.toString();
 

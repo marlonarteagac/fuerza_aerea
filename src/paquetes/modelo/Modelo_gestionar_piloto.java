@@ -59,10 +59,10 @@ public class Modelo_gestionar_piloto {
         }
         StringBuilder resultado = new StringBuilder("Lista de pilotos:\n");
         for (Piloto p : pilotos) {
-            resultado.append("ID: ").append(p.getIdentificacion())
-                    .append(", Nombre: ").append(p.getNombre())
-                    .append(", Rango: ").append(p.getRango())
-                    .append("\n");
+            resultado.append("Identifiación: ").append(p.getIdentificacion());
+            resultado.append(", Nombre: ").append(p.getNombre());
+            resultado.append(", Rango: ").append(p.getRango());
+            resultado.append("\n");
         }
         return resultado.toString();
 

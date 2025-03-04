@@ -60,7 +60,6 @@ public class Controlador_login {
         Vista_menu vista_menu = new Vista_menu();
         Controlador_menu controlador_menu = new Controlador_menu(modelo_menu, vista_menu);
         controlador_menu.IniciarMenuPrincipal();
-
     }
 
     public Usuario ValidarLogin(String usuario, String contraseña) {

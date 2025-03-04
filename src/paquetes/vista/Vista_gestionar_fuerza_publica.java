@@ -8,14 +8,15 @@ import paquetes.Principal.Tareas;
 
 public class Vista_gestionar_fuerza_publica {
 
-    private Controlador_gestionar_fuerza_publica controlador_gestionar_fuerza_publica; // conectamos con el modelo_piloto y todo lo que// tenga
+    private Controlador_gestionar_fuerza_publica controlador_gestionar_fuerza_publica; // conectamos con el
+                                                                                       // modelo_piloto y todo lo que//
+                                                                                       // tenga
     private Scanner entrada; // Para leer la entrada del usuario
     private Controlador_menu controlador_menu;
 
     // inicamos el constructor
-    public Vista_gestionar_fuerza_publica(Controlador_gestionar_fuerza_publica
-     controlador_gestionar_fuerza_publica,
-     Controlador_menu controlador_menu) {
+    public Vista_gestionar_fuerza_publica(Controlador_gestionar_fuerza_publica controlador_gestionar_fuerza_publica,
+            Controlador_menu controlador_menu) {
         this.controlador_gestionar_fuerza_publica = controlador_gestionar_fuerza_publica;
         this.entrada = new Scanner(System.in);
         this.controlador_menu = controlador_menu;
@@ -25,12 +26,12 @@ public class Vista_gestionar_fuerza_publica {
         while (true) {
             // Menú principal
             System.out.println("+-----------------------------------+");
-            System.out.println("|          Gestionar de Piloto      |");
+            System.out.println("|   Gestionar de fuerza pública     |");
             System.out.println("+-----------------------------------+");
-            System.out.println("| 1. Registrar fuerza publica       |");
-            System.out.println("| 2. Modificar fuerza publica       |");
-            System.out.println("| 3. Eliminar fuerza publica        |");
-            System.out.println("| 4. Consultar fuerza publica       |");
+            System.out.println("| 1. Registrar fuerza pública       |");
+            System.out.println("| 2. Modificar fuerza pública       |");
+            System.out.println("| 3. Eliminar fuerza pública        |");
+            System.out.println("| 4. Consultar fuerza pública       |");
             System.out.println("| 5. Menú principal                 |");
             System.out.println("+-----------------------------------+");
             System.out.print("| Seleccione una opción: ");
@@ -39,31 +40,30 @@ public class Vista_gestionar_fuerza_publica {
 
             switch (opcion) {
                 case 1:
-                Tareas.LimpiarConsola();
-                    RegistrarPiloto(); // Registrar un piloto
-           
+                    Tareas.LimpiarConsola();
+                    RegistrarFuerzaPublica(); // Registrar un piloto
+
                     break;
                 case 2:
-                Tareas.LimpiarConsola();
-                    ConsultarPiloto(); // Consultar pilotos
-                    ModificarPiloto(); // Modificar un piloto
-
+                    Tareas.LimpiarConsola();
+                    ConsultarFuerzaPublica(); // Consultar pilotos
+                    ModificarFuerzaPublica(); // Modificar un piloto
 
                     break;
 
                 case 3:
-                Tareas.LimpiarConsola();
-                    ConsultarPiloto(); // Consultar pilotos
-                    EliminarPiloto(); // Eliminar un piloto
+                    Tareas.LimpiarConsola();
+                    ConsultarFuerzaPublica(); // Consultar pilotos
+                    EliminarFuerzaPublica(); // Eliminar un piloto
 
                     break;
                 case 4:
-                Tareas.LimpiarConsola();
-                    ConsultarPiloto(); // Consultar pilotos
+                    Tareas.LimpiarConsola();
+                    ConsultarFuerzaPublica(); // Consultar pilotos
 
                     break;
                 case 5:
-                Tareas.LimpiarConsola();
+                    Tareas.LimpiarConsola();
                     VolverMenuPrincipal();
                     return;
                 default:
@@ -72,9 +72,9 @@ public class Vista_gestionar_fuerza_publica {
         }
     }
 
-    private void RegistrarPiloto() {
+    private void RegistrarFuerzaPublica() {
         System.out.println("+-----------------------------------+");
-        System.out.println("|     Registrar fuerza publica      |");
+        System.out.println("|     Registrar fuerza pública      |");
         System.out.println("+-----------------------------------+");
         System.out.print("código: ");
         int codigo = entrada.nextInt();
@@ -82,19 +82,18 @@ public class Vista_gestionar_fuerza_publica {
         System.out.print("Nombre: ");
         String nombre = entrada.nextLine();
 
-       // Llama al Controlador para registrar el piloto
+        // Llama al Controlador para registrar el piloto
         Tareas.LimpiarConsola();
         String resultado = controlador_gestionar_fuerza_publica.RegistrarfuerzaPublica(codigo, nombre);
         System.out.println(resultado); // Muestra el resultado
     }
 
-    private void ModificarPiloto() {
+    private void ModificarFuerzaPublica() {
         System.out.println("+-----------------------------------+");
-        System.out.println("|      Modificar fuerza publica     |");
+        System.out.println("|      Modificar fuerza pública     |");
         System.out.println("+-----------------------------------+");
         System.out.print("Código: ");
         int codigo = entrada.nextInt();
-        entrada.nextLine(); // Limpiar el buffer
         System.out.print("Nombre: ");
         String nombre = entrada.nextLine();
 
@@ -102,17 +101,17 @@ public class Vista_gestionar_fuerza_publica {
         Tareas.LimpiarConsola();
         String resultado = controlador_gestionar_fuerza_publica.ModificarFuerzaPublica(codigo, nombre);
         System.out.println(resultado); // Muestra el resultado
-       
+
     }
 
-    private void EliminarPiloto() {
+    private void EliminarFuerzaPublica() {
         System.out.println("+-----------------------------------+");
-        System.out.println("|     Eliminar fuerza publica       |");
+        System.out.println("|     Eliminar fuerza pública       |");
         System.out.println("+-----------------------------------+");
         System.out.print("Identificación: ");
         int codigo = entrada.nextInt();
         System.out.println("+-----------------------------------+");
-        System.out.println("| Autoriza eliminar fuerza publica? |");
+        System.out.println("| Autoriza eliminar fuerza pública? |");
         System.out.println("+-----------------------------------+");
         System.out.println("|       No = 0        Si = 1        |");
         System.out.println("+-----------------------------------+");
@@ -124,7 +123,7 @@ public class Vista_gestionar_fuerza_publica {
             System.out.println(resultado); // Muestra el resultado
 
         } else {
-            System.out.println("fuerza publica no eliminada");
+            System.out.println("fuerza pública no eliminada");
         }
 
     }
@@ -134,9 +133,9 @@ public class Vista_gestionar_fuerza_publica {
 
     }
 
-    private void ConsultarPiloto() {
+    private void ConsultarFuerzaPublica() {
         System.out.println("+-----------------------------------+");
-        System.out.println("|          Consultar piloto          |");
+        System.out.println("|    Consultar fuerza pública       |");
         System.out.println("+-----------------------------------+");
         System.out.println(controlador_gestionar_fuerza_publica.ConsultarfuerzaPublica());
 
