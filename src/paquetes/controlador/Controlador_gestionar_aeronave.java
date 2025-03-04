@@ -30,7 +30,7 @@ public class Controlador_gestionar_aeronave {
         return modelo_gestionar_aeronave.EliminarAeronave(placa); // Llama al Modelo para eliminarlo
     }
 
-    public String ConsultarfuerzaPublica() {
+    public String ConsultarAeronave() {
 
         return modelo_gestionar_aeronave.ConsultarAeronave(); // Llama al método en el Modelo
     }

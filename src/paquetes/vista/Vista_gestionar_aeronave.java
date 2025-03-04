@@ -137,7 +137,7 @@ public class Vista_gestionar_aeronave {
         System.out.println("+-----------------------------------+");
         System.out.println("|    Consultar  aeronave            |");
         System.out.println("+-----------------------------------+");
-        System.out.println(controlador_gestionar_aeronave.ConsultarfuerzaPublica());
+        System.out.println(controlador_gestionar_aeronave.ConsultarAeronave());
 
     }
 }
